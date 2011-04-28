@@ -1,0 +1,86 @@
+% Stundenplan von Martin Wegner
+% \via Dominik Schürmann
+% based on package timetable (http://www.planetk.de/index.php?title=Stundenplan).
+
+\documentclass[a4paper,10pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{lmodern}
+
+\usepackage[left=15mm,right=15mm,top=15mm,bottom=15mm]{geometry}
+\usepackage{timetable}
+\usepackage{mdwlist}
+
+\begin{document}
+	\thispagestyle{empty}
+
+	\begin{center}
+
+		\noindent\printheading{Stundenplan 4.\,Semester, SoSe 2011, Master Informatik}
+
+		% Define the layout of your time tables
+		\setslotsize{2.8cm}{0.3cm}
+		\setslotcount{5}{48}
+		\settopheight{3}
+		\settextframe{0.8mm}
+		% \setbottomstyle{\tiny}
+		% \settimestyle{\tiny}
+		% \setframetype[t]{1}
+		\seteventcornerradius{2pt}
+		\setprinttimestamps{2} % Print timestamps into event blocks
+
+		% Define event types
+		\defineevent{Vorlesung}%
+			{0.0}{0.28}{0.52}%
+			{1.0}{1.0}{1.0}
+		\defineevent{GrosseUebung}%
+			{0.34}{0.62}{0.11}%
+			{1.0}{1.0}{1.0}
+		\defineevent{KleineUebung}%
+			{1.0}{0.4}{0.2}%
+			{1.0}{1.0}{1.0}
+		\defineevent{Schluesselqualifikation}%
+			{0.19}{0.25}{0.02}%
+			{1.0}{1.0}{1.0}
+		\defineevent{Arbeit}%
+			{0.6}{0.8}{1.0}%
+			{1.0}{1.0}{1.0}
+		\defineevent{Fachgruppe}%
+			{0.0}{0.52}{0.82}%
+			{1.0}{1.0}{1.0}
+
+		% Start the time table
+		\begin{timetable}
+			\hours{9}{15}{1}
+			\germandays{1}
+
+			\event{1}{1130}{1300}{Echtzeit-Computergrafik}{}{G40}{GrosseUebung}
+			\event{1}{1315}{1445}{Online-Algorithmen}{}{PK11.1}{GrosseUebung}
+			\event{1}{1645}{1815}{Algorithm Engineering}{}{IZ161}{GrosseUebung}
+
+			\event{2}{1130}{1300}{Echtzeit-Computergrafik}{}{G40}{Vorlesung}
+			\event{2}{1315}{1445}{Online-Algorithmen}{}{IZ160}{Vorlesung}
+			\event{2}{1500}{1630}{Secure communication based on noisy input data}{}{IZ161}{Vorlesung}
+			\event{2}{1645}{1815}{Algorithm Engineering}{}{IZ161}{Vorlesung}
+			\event{2}{1830}{2000}{Sterben und Tod in der Rockmusik}{}{RR58.3}{Schluesselqualifikation}
+
+			\event{3}{0945}{1115}{Fundamente des Software Engineering}{}{IZ160}{GrosseUebung}
+
+			\event{4}{0900}{1300}{Arbeit}{}{iRMB}{Arbeit}
+			\event{4}{1315}{1445}{Fundamente des Software Engineering}{}{IZ160}{Vorlesung}
+			\event{4}{1500}{1715}{Relational Databases 2}{}{IZ160}{Vorlesung}
+			\event{4}{1815}{2100}{Fachgruppe}{}{IZ150}{Fachgruppe}
+
+			\event{5}{1130}{1300}{Secure communication based on noisy input data}{}{IZ161}{GrosseUebung}
+		\end{timetable}
+	\end{center}
+
+	\hfill
+
+	\begin{itemize*}
+		\item	\textbf{Online-Algorithmen, Übung:} alle 14 Tage beginnend ab 02.05.
+		\item	\textbf{Algorithm Engineering, Übung:} alle 14 Tage beginnend ab 18.04.
+		\item	\textbf{Fundamente des Software Engineering, Übung:} alle 14 Tage beginnend ab 20.04.
+	\end{itemize*}
+
+\end{document}
